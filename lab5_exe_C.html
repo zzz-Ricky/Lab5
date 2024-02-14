@@ -230,13 +230,26 @@ Description : DOM Elements.
 					Task_4[0].appendChild(paragraph);
 
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
-
+				Task_5a = document.getElementById("name");
+				Task_5a.placeholder = "Type name here";
+				Task_5b = document.getElementById("email");
+				Task_5b.placeholder = "Type email here";
+				Task_5c = document.getElementById("message");
+				Task_5c.placeholder = "Type message here";
 
 				// Task 6: Set the src attribute of the image
-
+				document.getElementsByTagName("img").src="images/logo.svg";
 
 				// Task 7: Add a new item in the navigation menu
-
+				Task_7 = document.getElementsByTagName("ul");
+				const newItem = document.createElement("li");
+				var a = document.createElement('a');
+				var linkText = document.createTextNode("Blog");
+				a.appendChild(linkText);
+				a.title = "Blog";
+				a.href = "#";
+				newItem.appendChild(a);
+				Task_7[0].appendChild(a);
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
 
