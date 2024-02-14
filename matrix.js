@@ -53,6 +53,24 @@ const showResult = (title, containerId, rows, cols, dataArray) => {
 const showResult2D = (title, containerId, dataArray) => {
 	// dataArray is a 2D array
 	// complete this function based on the showResult function
+
+    let container = document.getElementById(containerId);
+    container.innerHTML = ''; // Clear previous content
+    let table = document.createElement('table');
+
+    for (let i = 0; i < dataArray.length; i++) {
+        let tr = document.createElement('tr');
+
+        for (let j = 0; j < dataArray[i].length; j++) {
+            let td = document.createElement('td');
+            let span = document.createElement('span');
+            tr.appendChild(td)
+        }
+    }
+
+    let caption = table.createCaption();
+    caption.textContent = title;
+    container.appendChild(table);
 }
 
 function performOperation(operation) {
@@ -105,10 +123,44 @@ const getMatrixData2D = function (matrixId) {
 // The functions must check the posibility of calculation too.
 function addMatrices(matrix1, matrix2){ 
 	// provide the code
-}
+    //Adding two matrices
+    let result = [];
+    for (let i = 0; i < matrix1.length; i++) {
+
+        let row = [];
+
+        for (let j = 0; j < matrix1[0].length; j++) {
+            row.push(matrix1[i][j] + matrix2[i][j]);
+        }
+        result.push(row);
+    }
+    return result;
+    }
 const subtractMatrices = function (matrix1, matrix2) { 
 	// provide the code
+    //Subtracting two matrices
+    let result = [];
+    for (let i = 0; i < matrix1.length; i++) {
+
+        let row = [];
+
+        for (let j = 0; j < matrix1[0].length; j++) {
+            row.push(matrix1[i][j] - matrix2[i][j]);
+        }
+        result.push(row);
+    }
+    return result;
+
 };
 const multiplyMatrices = (matrix1, matrix2) => { 
 	// provide the code
+    //Multiply two matrices
+    let result = []
+    for (let i = 0; i < matrix1.length; i++) {
+        var rows
+        for (j = 0; j < matrix1.length; j++) {
+            
+        }
+    }
+
 };
