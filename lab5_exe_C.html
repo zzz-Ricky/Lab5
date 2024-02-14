@@ -253,11 +253,21 @@ Description : DOM Elements.
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
 
+				const textChange = document.querySelector('input[value=Submit]');
+				textChange.addEventListener("click",function(){
+					textChange.value = "Submitted"
+					textChange.disabled = true;
+				});
 
 				// Task 9: Change the text color of each item in the 'Related Links' to green
-
+				Task_9 = document.querySelectorAll('aside ul li a');
+				for(var i=0; i<Task_9.length;i++){
+					Task_9[i].style.color = "green";
+				}
 
 				// Task 10: Add a red solid border to the footer
+				Task_10 = document.getElementsByTagName("footer");
+				Task_10[0].style.border = "2px solid red";
 			});
 		</script>
 	</body>
