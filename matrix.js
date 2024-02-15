@@ -63,9 +63,10 @@ const showResult2D = (title, containerId, dataArray) => {
 
         for (let j = 0; j < dataArray[i].length; j++) {
             let td = document.createElement('td');
-            let span = document.createElement('span');
+            td.textContent = dataArray[i][j];
             tr.appendChild(td)
         }
+        table.appendChild(tr)
     }
 
     let caption = table.createCaption();
@@ -80,11 +81,28 @@ function performOperation(operation) {
     console.log("2nd Matrix", matrix2);
     console.log("Operation", operation);
     // Just a test result
-    let result = [1, 2, 3, 4, 5, 6, 7, 8];
+    // let result = [1, 2, 3, 4, 5, 6, 7, 8];
     // Call your matrix calculation functions here
     // For example: if (operation === 'add') { addMatrices(matrix1, matrix2); }
-	// prints suitable messages for impossible situation
-    showResult('The Result', 'matrix3', 2, 4, result); // use suitable function for printing results
+
+    let result;
+
+    if (operation === 'add') 
+    {
+        result = addMatrices(matrix1, matrix2);
+    } 
+
+    else if (operation === 'subtract') 
+    {
+        result = subtractMatrices(matrix1, matrix2);
+    }
+    else if (operation === 'multiply') 
+    {
+        result = multiplyMatrices(matrix1, matrix2);
+    }
+	
+    // prints suitable messages for impossible situation
+    showResult2D('The Result', 'matrix3', result); // use suitable function for printing results
 }
 
 const getMatrixData1D = function (matrixId) {
@@ -155,12 +173,19 @@ const subtractMatrices = function (matrix1, matrix2) {
 const multiplyMatrices = (matrix1, matrix2) => { 
 	// provide the code
     //Multiply two matrices
-    let result = []
+    let result = [];
     for (let i = 0; i < matrix1.length; i++) {
-        var rows
+        
+        result[i] = [];
+
         for (j = 0; j < matrix1.length; j++) {
-            
+            let sum = 0;
+
+            for (let k = 0; k < matrix1[0].length; k++) {
+                sum += matrix1[i][k] * matrix2[k][j];
+            }
+            result[i][j] = sum;
         }
     }
-
+    return result;
 };
