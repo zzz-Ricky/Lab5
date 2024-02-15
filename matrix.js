@@ -142,6 +142,10 @@ const getMatrixData2D = function (matrixId) {
 function addMatrices(matrix1, matrix2){ 
 	// provide the code
     //Adding two matrices
+    if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
+        throw new Error('The two matrices must have the same dimensions.');
+    }
+
     let result = [];
     for (let i = 0; i < matrix1.length; i++) {
 
@@ -157,6 +161,10 @@ function addMatrices(matrix1, matrix2){
 const subtractMatrices = function (matrix1, matrix2) { 
 	// provide the code
     //Subtracting two matrices
+    if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
+        throw new Error('The two matrices must have the same dimensions.');
+    }
+
     let result = [];
     for (let i = 0; i < matrix1.length; i++) {
 
