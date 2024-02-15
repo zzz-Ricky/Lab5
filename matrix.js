@@ -173,6 +173,10 @@ const subtractMatrices = function (matrix1, matrix2) {
 const multiplyMatrices = (matrix1, matrix2) => { 
 	// provide the code
     //Multiply two matrices
+    if (matrix1[0].length !== matrix2.length) {
+        throw new Error('The number of columns in the first matrix must be equal to the number of rows in the second matrix.');
+    }
+
     let result = [];
     for (let i = 0; i < matrix1.length; i++) {
         
